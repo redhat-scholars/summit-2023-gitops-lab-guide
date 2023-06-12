@@ -51,7 +51,7 @@ You'll be using your own OpenShift cluster throughout this workshop. Your cluste
 
 To retrieve your cluster's information:
 
-. Visit the https://summit.demo.redhat.com[summit.demo.redhat.com].
+. Visit the Workshop URL - EG: https://demo.redhat.com/workshop/GUID
 . Enter your email address and the password provided by the workshop administrator(s).
 +
 [IMPORTANT]
