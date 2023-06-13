@@ -224,7 +224,7 @@
 <h2 id="_explore_your_new_applications_and_project_with_custom_rbac"><a class="anchor" href="#_explore_your_new_applications_and_project_with_custom_rbac"></a>Explore your new Applications and Project with Custom RBAC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before moving on and seeing the effects of the newly synced Application resources, review the <a href="https://github.com/%USERID%/rht-summit-2023-gitops-cluster-mgmt/blob/main/rbac/groups/group.developers.yaml">group.developers.yaml</a> and <a href="https://github.com/%USERID%/rht-summit-2023-gitops-cluster-mgmt/blob/main/rbac/groups/group.operations.yaml">group.operations.yaml</a> files. These are simple Group CRs that define a list of Users that are part of a Group.</p>
+<p>Before moving on and seeing the effects of the newly synced Application resources, review the <a href="https://github.com/%USERID%/rht-summit-2023-gitops-cluster-mgmt/blob/main/rbac/groups/group.developers.yaml">group.developers.yaml</a> and <a href="https://github.com/%USERID%/rht-summit-2023-gitops-cluster-mgmt/blob/main/rbac/groups/group.operations.yaml">group.operations.yaml</a> files. These are simple Group CRs that define a list of Users that are part of the named Group.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -297,16 +297,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Creates an <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#projects">AppProject</a>.</p>
+<p>Creates an <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#projects">AppProject</a>, i.e a Project in Argo CD.</p>
 </li>
 <li>
-<p>Supports multiple <code>destinations</code> (target clusters), though there&#8217;s only one defined in this example; the local cluster into which it has been applied.</p>
+<p>Supports multiple <code>destinations</code> (target clusters and namespaces), though there&#8217;s only one defined in this example; the local cluster into which it has been applied.</p>
 </li>
 <li>
-<p>Limits the target Namespaces to <code>project-memes-dev</code> and <code>project-memes-prod</code>, and <strong>does not</strong> whitelist any cluster-scoped resources. This is important; we want to restrict this project to managing only resources in a the defined Namespaces and not at the cluster-level!</p>
+<p>Limits the target Namespaces to <code>project-memes-dev</code> and <code>project-memes-prod</code>, and <strong>does not</strong> whitelist any cluster-scoped resources. This is important; we want to restrict this Project to managing only resources in the defined Namespaces and not at the cluster-level!</p>
 </li>
 <li>
-<p>Defines two roles: <code>memes-development</code> and <code>memes-operations</code>. Users in the <code>application-dev</code> and <code>application-ops</code> Groups created previously are associated with these, respectively.</p>
+<p>Defines two roles: <code>memes-development</code> and <code>memes-operations</code>. Users in the <code>application-dev</code> and <code>application-ops</code> Groups created previously are associated with these, respectively. Effectively you&#8217;re creating a mapping between Argo CD policies and Groups of OpenShift users.</p>
 </li>
 <li>
 <p>Defines independent RBAC policies for the <code>memes-development</code> and <code>memes-operations</code> roles.</p>

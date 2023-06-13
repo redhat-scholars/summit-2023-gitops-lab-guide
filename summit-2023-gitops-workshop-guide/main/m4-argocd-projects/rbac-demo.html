@@ -341,12 +341,15 @@
 </div>
 </div>
 <div class="paragraph">
-<p>In short, the <code>foo</code> user was automatically granted a <code>readonly</code> role. You can confirm this by using the <strong>OpenShift Web Terminal</strong> (in your other browser session as the <code>opentlc-mgr</code> user) to view the Argo CD RBAC configuration/policies:</p>
+<p>In short, the <code>foo</code> user was automatically granted a <code>readonly</code> role. You can confirm this by using the <strong>OpenShift Web Terminal</strong> (in your other browser session as the <code>opentlc-mgr</code> user) to view the Argo CD RBAC configuration/policies defined in the <code>argocd-rbac-cm</code> ConfigMap:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get cm argocd-rbac-cm -o yaml -n openshift-gitops</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Notice that the default policy is specified as <code>policy.default: role:readonly</code> in the ConfigMap.</p>
 </div>
 </div>
 </div>
@@ -357,7 +360,7 @@
 <p>Now that you&#8217;ve seen that Argo CD enforces RBAC, you&#8217;ll need to create new Projects and grant OpenShift users access to them. This involves associating users in specific <a href="https://docs.openshift.com/container-platform/4.12/rest_api/user_and_group_apis/group-user-openshift-io-v1.html" target="_blank" rel="noopener">Groups</a> with policies defined in the Argo CD Project.</p>
 </div>
 <div class="paragraph">
-<p>As you might have guessed, this requires defining some more YAML resources and will be managed with another Argo CD application. You might be starting to think that it&#8217;s tedious to set up each Application one-by-one. In the next section you&#8217;ll learn how to use the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/" target="_blank" rel="noopener">App of Apps Pattern</a> to bootstrap your cluster with all your Applications.</p>
+<p>As you might have guessed, this requires defining some more YAML resources, and will be managed with another Argo CD application. You might be starting to think that it&#8217;s tedious to set up each Application one-by-one. In the next section you&#8217;ll learn how to use the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/" target="_blank" rel="noopener">App of Apps Pattern</a> to bootstrap your cluster with all of your Applications.</p>
 </div>
 </div>
 </div>
@@ -365,7 +368,7 @@
 <h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this section you learned that Argo CD enforces RBAC for Projects. This might seem trivial, but it&#8217;s an important step in understanding how to manage your cluster.</p>
+<p>In this section you learned that Argo CD enforces RBAC for Projects. This might seem trivial, but it&#8217;s an important step in understanding how to manage your cluster and application resources.</p>
 </div>
 <div class="paragraph">
 <p>In the next section you&#8217;ll use the <strong>App of Apps Pattern</strong> to setup RBAC and Projects. This will enable your developers to leverage Argo CD to continuously deliver their applications!</p>

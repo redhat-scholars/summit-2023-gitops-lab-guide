@@ -269,7 +269,7 @@ oc apply -f $GITHUB_URL -n openshift-gitops</code></pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>The synchronisation failed because the <a href="https://kubernetes.io/docs/concepts/security/service-accounts/">Service Account</a> used by Argo CD to communicate the the Kubernetes/OpenShift API doesn&#8217;t have the necessary permissions to manage ResourceQuotas and LimitRanges.</p>
+<p>The synchronisation failed because the <a href="https://kubernetes.io/docs/concepts/security/service-accounts/">Service Account</a> used by Argo CD to authenticate when it communicates with the Kubernetes/OpenShift API doesn&#8217;t have the necessary permissions to manage ResourceQuotas and LimitRanges.</p>
 </div>
 <div class="paragraph">
 <p>This class of error can be addressed by explicitly granting the Argo CD Service Account the required permissions to manage resources at the cluster-level using Kubernetes <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">ClusterRoles and ClusterRoleBindings</a>. The next section will demonstrate how to do this.</p>

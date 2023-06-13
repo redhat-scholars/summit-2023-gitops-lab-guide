@@ -252,6 +252,11 @@
 </li>
 <li>
 <p>Select the <strong>Create a new repository</strong> option.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ex1.use-template.png" alt="ex1.use template">
+</div>
+</div>
 </li>
 <li>
 <p>Use the following value for the the <strong>Repository name</strong> field:</p>
@@ -312,7 +317,7 @@
 <h2 id="_access_your_openshift_cluster"><a class="anchor" href="#_access_your_openshift_cluster"></a>Access your OpenShift Cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You&#8217;ll be using your own OpenShift cluster throughout this workshop. Your cluster is pre-configured with the <strong>OpenShift Web Terminal</strong> and <strong>Red Hat OpenShift GitOps</strong> Operators. You can think of Operators as addons to an OpenShift or Kubernetes cluster that provide it with extended features/capabilities:</p>
+<p>You&#8217;ll be using your own OpenShift cluster throughout this workshop. Your cluster will be configured with the <strong>OpenShift Web Terminal</strong> and <strong>Red Hat OpenShift GitOps</strong> Operators. You can think of Operators as addons to an OpenShift or Kubernetes cluster that provide it with extended features/capabilities:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -320,20 +325,33 @@
 <p>The <strong>Web Terminal</strong> makes it easy to use pre-authenticated command-line tools (CLIs) to interact with the OpenShift APIs directly from the <strong>OpenShift Web Console</strong> in your web browser.</p>
 </li>
 <li>
-<p>Pre-installing the <strong>Red Hat OpenShift GitOps</strong> operator saved a few minutes of time so you can fully focus on actually learning about GitOps instead of setting it up!</p>
+<p>The <strong>Red Hat OpenShift GitOps</strong> operator provides a managed an Argo CD instance on OpenShift.</p>
 </li>
 </ul>
 </div>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_openshift-provided-by-a-workshop-host"></a>OpenShift (Provided by a Workshop Host)</p>
+</li>
+<li>
+<p><a id="tabset1_custom-openshift"></a>Custom OpenShift</p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_openshift-provided-by-a-workshop-host">
 <div class="paragraph">
-<p>To retrieve your cluster&#8217;s information:</p>
+<p>If you&#8217;re attending this workshop as part of a hosted session, then continue reading this section. If you need to self-host an environment for this workshop then switch to the <strong>Custom OpenShift</strong> tab.</p>
+</div>
+<div class="paragraph">
+<p>You likely already accessed these instructions via a unique <a href="https://demo.redhat.com">demo.redhat.com</a> URL, e.g <code><a href="https://demo.redhat.com/workshop/$WORKSHOP_ID" class="bare">https://demo.redhat.com/workshop/$WORKSHOP_ID</a></code>. If so, return to that URL and:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Visit the <a href="https://summit.demo.redhat.com">summit.demo.redhat.com</a>.</p>
-</li>
-<li>
-<p>Enter your email address and the password provided by the workshop administrator(s).</p>
+<p>Enter your email address, and the password provided by the workshop administrator(s).</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -341,9 +359,7 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Use your actual email address. This is so you can use the same email and password again to access your cluster information if you lose access, or forget the cluster details.</p>
-</div>
+Use your actual email address. This is so you can use the same email and password again to access your cluster information if you lose access, or forget the cluster details.
 </td>
 </tr>
 </table>
@@ -378,12 +394,23 @@
 </div>
 </li>
 <li>
-<p>Login to your OpenShift cluster using the <strong>Admin</strong> username and password provided by <a href="https://summit.demo.redhat.com">summit.demo.redhat.com</a>.</p>
+<p>Login to your OpenShift cluster using the <strong>Admin</strong> username and password provided by the <a href="https://demo.redhat.com">demo.redhat.com</a> page.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>The <strong>Overview</strong> page of the OpenShift Web Console is displayed after a successful login. From here you can perform both administrative and developer-focused tasks.</p>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_custom-openshift">
+<div class="paragraph">
+<p>Use the instructions in the <a href="https://github.com/redhat-scholars/summit-2023-gitops-lab-guide#lab-environment-setup">Using your own Environment section of this repository</a> to prepare your OpenShift environment for this workshop.</p>
+</div>
+<div class="paragraph">
+<p>Move onto the next section once the OpenShift environment has been configured.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

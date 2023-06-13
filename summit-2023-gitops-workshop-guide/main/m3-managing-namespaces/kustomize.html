@@ -230,7 +230,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Another use-case is patching resources based on the target environment. This example from the Kustomize website shows how a Deployment&#8217;s replica count can be scaled out depending on the target environment.</p>
+<p>Another use-case for YAML templating is patching resources based on the target environment. This example image from the Kustomize website shows how a Deployment&#8217;s replica count can be scaled out depending on the target environment.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -286,10 +286,24 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Navigate to <a href="https://github.com/%USERID%/rht-summit-2023-gitops-cluster-mgmt/" target="_blank" rel="noopener">the homepage</a> your copy of the GitHub repository.</p>
+<p>Navigate to <a href="https://github.com/%USERID%/rht-summit-2023-gitops-cluster-mgmt/" target="_blank" rel="noopener">the root</a> your copy of the GitHub repository.</p>
 </li>
 <li>
 <p>Press the period/dot key to open GitHub&#8217;s web-based editor.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The period/dot key shortcut will only work from the root of the GitHub repository.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Create a <strong>folder</strong> named <code>project-memes-prod</code> inside the <em>managed-namespaces/overlays/</em> folder. This folder will contain your Namespace configuration.</p>
