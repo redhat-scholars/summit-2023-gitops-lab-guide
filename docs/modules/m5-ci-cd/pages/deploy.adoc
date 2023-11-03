@@ -53,7 +53,6 @@ rht-summit-2023-sample-application
 ----
 . Navigate to the Argo CD dashboard.
 . Click the *New App* button. An overlay will appear.
-. Switch to the YAML editor in the overlay using the *Edit as YAML* button.
 . Fill in the form with the following information:
     * Application Name: `random-meme-dev` (Using any other value will result in an error. Feel free to try a different value to see what happens!)
     * Project: `project-memes`
